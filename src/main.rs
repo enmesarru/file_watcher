@@ -87,6 +87,7 @@ fn process(path: &PathBuf, status: FileStatus) {
 }
 
 fn main() {
+    #[cfg(target_os="windows")]
     let enabled = ansi_term::enable_ansi_support(); // for Windows 10
 
     let path = PathBuf::from(current_dir().unwrap());
